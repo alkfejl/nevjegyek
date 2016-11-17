@@ -15,6 +15,10 @@
 | Route.resource('user', 'UserController')
 */
 
-const Route = use('Route')
+const Route = use('Route');
 
-Route.on('/').render('welcome')
+Route.on('/').render('main');
+Route.get('/login', 'ViewController.login');
+Route.post('/login', 'ViewController.loginSubmit');
+Route.get('/main', 'ViewController.main');
+
