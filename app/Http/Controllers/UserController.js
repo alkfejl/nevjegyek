@@ -2,6 +2,7 @@
 
 const Validator = use('Validator')
 const User = use('App/Model/User')
+const Hash = use('Hash')
 
 class UserController {
 
@@ -26,11 +27,12 @@ class UserController {
             res.redirect('back')
             return
         }
-        //userData.password = yield Hash.make(userData.password);
+        
         const user = new User();
         user.username = post.username;
         user.email = post.email;
-        user.password = post.password;
+        user.password = yield Hash.make(post.password);
+
         yield user.save();
 
         yield req.auth.login(user);
@@ -38,6 +40,25 @@ class UserController {
 
         res.redirect('/');
 
+    }
+
+    * loginSubmit(req, res) {
+        try{
+            var post = req.only('email', 'password');
+            console.log(post);
+            yield req.auth.attempt(post.email, post.password);
+            res.redirect('/');
+        }catch(e){
+            yield req
+                .withOut('password')
+                .andWith({ errors: [{
+                    message:'Bad credentials'
+                }] })
+                .flash()
+            res.redirect('back')
+            console.log(e);
+            return
+        }
     }
 
 }

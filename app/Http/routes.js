@@ -19,7 +19,7 @@ const Route = use('Route');
 
 Route.on('/').render('main');
 Route.get('/login', 'ViewController.login');
-Route.post('/login', 'NevjegyController.loginSubmit');
+Route.post('/login', 'UserController.loginSubmit');
 Route.get('/signup', 'UserController.signup');
 Route.post('/signup', 'UserController.store');
 Route.get('/main', 'NevjegyController.list');
