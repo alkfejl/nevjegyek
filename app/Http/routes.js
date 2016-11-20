@@ -28,3 +28,4 @@ Route.get('/login', 'UserController.login');
 Route.post('/login', 'UserController.loginSubmit');
 Route.get('/signup', 'UserController.signup');
 Route.post('/signup', 'UserController.store');
+Route.get('/logout', 'UserController.submitLogout');

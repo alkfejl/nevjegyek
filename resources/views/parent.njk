@@ -22,28 +22,32 @@
         <a class="navbar-brand" href="main">Névjegyek</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-        <ul class="nav navbar-nav">
-            <li><a href="login">Belépés</a></li>
-        </ul>
-        <ul class="nav navbar-nav">
-            <li><a href="signup">Regisztráció</a></li>
-        </ul>
+        {% if currentUser.username %}
         <ul class="nav navbar-nav">
             <li><a href="create">Új névjegy</a></li>
         </ul>
+        {% endif %}
+
         <div class="nav navbar-right">
+            {% if currentUser.username %}
             <ul class="nav navbar-nav">
                 <li><a>Bejelentkezve: {{ currentUser.username }}</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="main">Kilépés</a></li>
+                <li><a href="logout">Kilépés</a></li>
             </ul>
+            {% else %}
+            <ul class="nav navbar-nav">
+            <li><a href="login">Belépés</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="signup">Regisztráció</a></li>
+            </ul>
+            {% endif %}
         </div>
         </div>
     </div>
     </nav>
-
     {% block tartalom %}{% endblock %}
-
 </body>
 </html>

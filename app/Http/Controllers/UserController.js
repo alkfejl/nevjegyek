@@ -65,6 +65,11 @@ class UserController {
         }
     }
 
+    * submitLogout (req, res) {
+        yield req.auth.logout()
+        res.redirect('/')
+    }
+
 }
 
 module.exports = UserController
