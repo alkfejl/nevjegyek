@@ -3,6 +3,7 @@
 {% block tartalom %}
   {% if currentUser.username %}
     {% for nevjegy in nevjegyek %}
+      {% if currentUser.username === nevjegy.author %}
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="panel panel-primary">
             <div class="panel-heading">
@@ -12,9 +13,11 @@
                 <h6>Cím: {{ nevjegy.address }}</h6>
                 <h6>Telefonszám: {{ nevjegy.phone }}</h6>
                 <h6>Email: {{ nevjegy.email }}</h6>
+                <h6>Készítette: {{ nevjegy.author }}</h6>
             </div>
             </div>
         </div>
+      {% endif %}
     {% endfor %}
   {% else %}
     <div class="alert alert-warning">

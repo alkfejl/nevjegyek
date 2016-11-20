@@ -11,6 +11,7 @@ class NevjegiesTableSchema extends Schema {
       table.string('address', 50)
       table.string('phone', 50)
       table.string('email', 50)
+      table.string('author', 50)
       table.timestamps()
     })
   }

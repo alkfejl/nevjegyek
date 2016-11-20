@@ -9,7 +9,8 @@ class Nevjegy extends Lucid {
             name: 'required|unique:nevjegies',
             address: 'required',
             phone: 'required',
-            email: 'required'
+            email: 'required',
+            author: 'required',
         }        
     }
 

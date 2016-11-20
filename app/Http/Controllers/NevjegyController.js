@@ -19,12 +19,13 @@ class NevjegyController {
     }
 
     * submitCreate(req, res) {
-        var post = req.only('name', 'address', 'phone', 'email');
+        var post = req.only('name', 'address', 'phone', 'email', 'author');
         var nevjegyData ={
             name: post.name,
             address: post.address,
             phone: post.phone,
-            email: post.email
+            email: post.email,
+            author: req.currentUser.username
         }
         console.log(nevjegyData);
         const validation = yield Validator.validate(nevjegyData, Nevjegy.rules)
@@ -43,7 +44,8 @@ class NevjegyController {
         nevjegy.address = post.address;
         nevjegy.phone = post.phone;
         nevjegy.email = post.email;
-        
+        nevjegy.author = nevjegyData.author;
+        console.log(nevjegy.author)
         yield nevjegy.save();
 
         res.redirect('/main');
