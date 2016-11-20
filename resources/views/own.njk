@@ -3,7 +3,7 @@
 {% block tartalom %}
   {% if currentUser.username %}
     {% for nevjegy in nevjegyek %}
-      
+      {% if currentUser.username === nevjegy.author %}
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="panel panel-primary">
             <div class="panel-heading">
@@ -17,7 +17,7 @@
             </div>
             </div>
         </div>
-      
+      {% endif %}
     {% endfor %}
   {% else %}
     <div class="alert alert-warning">

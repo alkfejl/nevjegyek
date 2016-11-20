@@ -21,6 +21,7 @@ Route.on('/').render('main');
 
 Route.get('/main', 'NevjegyController.list');
 Route.get('/list', 'NevjegyController.list');
+Route.get('/own', 'NevjegyController.own');
 Route.get('/create', 'NevjegyController.create');
 Route.post('/create', 'NevjegyController.submitCreate');
 

@@ -13,6 +13,15 @@ class NevjegyController {
         });   
     }
 
+    * own(req, res) {
+
+        const nevjegyek = yield Nevjegy.all();
+
+        yield res.sendView('own', {
+            nevjegyek: nevjegyek.toJSON(),
+        });   
+    }
+
     * create(req, res) {
 
         yield res.sendView('create');
