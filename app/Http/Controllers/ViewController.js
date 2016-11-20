@@ -5,9 +5,7 @@ class ViewController {
         yield res.sendView('login');
     }
 
-    * signup(req, res) {
-        yield res.sendView('signup');
-    }
+    
 
     * main(req, res) {
         yield res.sendView('main', {
