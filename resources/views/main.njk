@@ -1,0 +1,18 @@
+{% extends 'parent' %}
+
+{% block tartalom %}
+  {% for nevjegy in nevjegyek %}
+
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">{{ nevjegy.name }}</h2>
+    </div>
+    <div class="panel-body">
+        <p>Cím: {{ nevjegy.address }}</p>
+        <p>Telefonszám: {{ nevjegy.phone }}</p>
+        <p>Email: {{ nevjegy.email }}</p>
+    </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}
