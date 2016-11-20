@@ -33,7 +33,9 @@ class UserController {
         user.password = post.password;
         yield user.save();
 
-        req.auth.login(user);
+        yield req.auth.login(user);
+        
+
         res.redirect('/');
 
     }
