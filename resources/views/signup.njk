@@ -4,8 +4,8 @@
     {% for error in old('errors') %}
         <li>{{ error.message }}</li>
     {% endfor %}
-    <form class="form-horizontal method="POST">
-
+    <form class="form-horizontal" method="post">
+        {{ csrfField }}
         <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="form-group">
         <label for="username" class="col-lg-2 control-label">Felhasználónév</label>

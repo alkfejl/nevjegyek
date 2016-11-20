@@ -16,15 +16,14 @@ class UserController {
             email: post.email,
             password: post.password
         }
-        const validation = yield Validator.validateAll(userData, User.rules)
+        const validation = yield Validator.validate(userData, User.rules)
 
         if(validation.fails()) {
-            yield request
+            yield req
                 .withAll()
                 .andWith({ errors: validation.messages() })
                 .flash()
-
-            res.redirect('/')
+            res.redirect('back')
             return
         }
         //userData.password = yield Hash.make(userData.password);
@@ -33,8 +32,9 @@ class UserController {
         user.email = post.email;
         user.password = post.password;
         yield user.save();
-        //req.auth.login(user);
-        res.sendView('/main');
+
+        req.auth.login(user);
+        res.redirect('/');
 
     }
 
