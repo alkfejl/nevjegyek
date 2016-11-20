@@ -18,10 +18,13 @@
 const Route = use('Route');
 
 Route.on('/').render('main');
-Route.get('/login', 'ViewController.login');
+
+Route.get('/main', 'NevjegyController.list');
+Route.get('/list', 'NevjegyController.list');
+Route.get('/create', 'NevjegyController.create');
+Route.post('/create', 'NevjegyController.submitCreate');
+
+Route.get('/login', 'UserController.login');
 Route.post('/login', 'UserController.loginSubmit');
 Route.get('/signup', 'UserController.signup');
 Route.post('/signup', 'UserController.store');
-Route.get('/main', 'NevjegyController.list');
-Route.get('/list', 'NevjegyController.list');
-

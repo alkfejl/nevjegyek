@@ -1,0 +1,45 @@
+{% extends 'parent' %}
+
+{% block tartalom %}
+    <form class="form-horizontal" method="post">
+        {{ csrfField }}
+    <fieldset>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Név</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="name" name = 'name' placeholder="Név">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address" class="col-lg-2 control-label">Cím</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="address" name = 'address' placeholder="Cím">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="col-lg-2 control-label">Tel.</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="phone" name = 'phone' placeholder="Telefonszám">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="email" name = 'email' placeholder="Email">
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Mehet!</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    </form>
+{% endblock %}

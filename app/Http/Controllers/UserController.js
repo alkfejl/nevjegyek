@@ -42,6 +42,10 @@ class UserController {
 
     }
 
+    * login(req, res) {
+        yield res.sendView('login');
+    }
+
     * loginSubmit(req, res) {
         try{
             var post = req.only('email', 'password');

@@ -29,10 +29,15 @@
             <li><a href="signup">Regisztráció</a></li>
         </ul>
         <ul class="nav navbar-nav">
-            <li><a href="list">List</a></li>
+            <li><a href="create">Új névjegy</a></li>
         </ul>
         <div class="nav navbar-right">
-            {{ currentUser.username }}
+            <ul class="nav navbar-nav">
+                <li><a>Bejelentkezve: {{ currentUser.username }}</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="main">Kilépés</a></li>
+            </ul>
         </div>
         </div>
     </div>
