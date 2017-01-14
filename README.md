@@ -204,3 +204,6 @@ Program használata:
 * Hibás adatok esetén jelez az űrlap.
 * Enter vagy Submit gomb hatására mentsük az adatokat.
 * Ha befejeztük a böngészést, kattintsunk a kilépés gombra. 
+
+
+### 6. Harmadik beadandó
